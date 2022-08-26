@@ -13,7 +13,7 @@ namespace QL_SinhVien.Data.Interface
 
         IEnumerable<T> Find(Expression<Func<T, bool>> expression);
         void Add(T entity);
-        void Remove(T entity);
+        bool Remove(T entity);
         T Update(T entity);
         T Insert(T entity);
     }

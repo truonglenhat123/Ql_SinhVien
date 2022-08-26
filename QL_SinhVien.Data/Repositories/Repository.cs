@@ -41,14 +41,17 @@ namespace QL_SinhVien.Data.Repositories
         public T Insert(T entity)
         {
             _context.Set<T>().Add(entity);
-            _context.SaveChangesAsync();
+            _context.SaveChanges();
             return entity;
         }
 
-        public void Remove(T entity)
+        public bool Remove(T entity)
         {
-            _context.Set<T>().Remove(entity);
+           var x =  _context.Set<T>().Remove(entity);
             _context.SaveChanges();
+
+            var y = x.State;
+            return false;
         }
         public async void RemoveAsync(T entity)
         {

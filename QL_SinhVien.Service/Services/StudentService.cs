@@ -26,6 +26,33 @@ namespace QL_SinhVien.Service.Services
             return _mapper.Map<List<StudentDTO>>(students);
         }
 
-        
+        public StudentDTO GetById( int Id)
+        {
+            var student = _repository.GetById(Id);
+            return _mapper.Map<StudentDTO>(student);
+        }
+
+        public StudentDTO AddStudent(StudentDTO student)
+        {
+            var svEntity = _mapper.Map<SinhVienEntities>(student);
+            var sinhVienEntitieResult = _repository.Insert(svEntity);
+
+            return _mapper.Map<StudentDTO>(sinhVienEntitieResult);
+        }
+
+        public StudentDTO UpdateStudent(StudentDTO student)
+        {
+            var svEntity = _mapper.Map<SinhVienEntities>(student);
+            var sinhVienEntitieResult = _repository.Update(svEntity);
+
+            return _mapper.Map<StudentDTO>(sinhVienEntitieResult);
+        }
+
+        public bool DeleteStudent(int id)
+        {
+            var svEntity = _repository.GetById(id);
+            return _repository.Remove(svEntity);
+        }
+
     }
 }

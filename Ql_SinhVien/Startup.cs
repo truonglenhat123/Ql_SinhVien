@@ -33,11 +33,24 @@ namespace Ql_SinhVien
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddControllers();
             services.AddDbContext<QL_SinhVienDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
             services.AddScoped<IStudentService, StudentService>();
             services.AddAutoMapper(typeof(AutoMappers).Assembly);
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddCors(options =>
+            {
+                options.AddPolicy(
+                    "localhost",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:3000")
+                                            .AllowAnyHeader()
+                                            .AllowAnyMethod()
+                                            .AllowCredentials();
+                    });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,7 +62,7 @@ namespace Ql_SinhVien
             }
 
             app.UseRouting();
-
+            app.UseCors("localhost");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

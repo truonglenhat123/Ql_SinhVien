@@ -8,6 +8,13 @@ namespace QL_SinhVien.Service.Interfaces
     public interface IStudentService
     {
         IEnumerable<StudentDTO> GetAll();
-       
+        StudentDTO GetById(int Id);
+
+        StudentDTO AddStudent(StudentDTO student);
+
+        StudentDTO UpdateStudent(StudentDTO student);
+
+        bool DeleteStudent(int id);
+
     }
 }
