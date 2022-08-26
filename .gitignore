@@ -69,3 +69,5 @@ Ql_SinhVien/obj/Debug/netcoreapp3.1/Ql_SinhVien.csproj.FileListAbsolute.txt
 Ql_SinhVien/obj/Debug/netcoreapp3.1/Ql_SinhVien.dll
 Ql_SinhVien/obj/Debug/netcoreapp3.1/Ql_SinhVien.GeneratedMSBuildEditorConfig.editorconfig
 Ql_SinhVien/obj/Debug/netcoreapp3.1/staticwebassets/Ql_SinhVien.StaticWebAssets.xml
+*.v2
+*.user

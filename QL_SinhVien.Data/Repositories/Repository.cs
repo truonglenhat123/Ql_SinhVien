@@ -8,7 +8,7 @@ using System.Text;
 
 namespace QL_SinhVien.Data.Repositories
 {
-    class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : class
     {
         protected readonly QL_SinhVienDBContext _context;
         protected readonly DbSet<T> _dbSet;

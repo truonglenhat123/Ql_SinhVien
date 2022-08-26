@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -7,6 +8,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using QL_SinhVien.Data;
+using QL_SinhVien.Data.Interface;
+using QL_SinhVien.Data.Repositories;
+using QL_SinhVien.Service.Interfaces;
+using QL_SinhVien.Service.Mappers;
+using QL_SinhVien.Service.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +35,9 @@ namespace Ql_SinhVien
         {
             services.AddControllers();
             services.AddDbContext<QL_SinhVienDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            services.AddScoped<IStudentService, StudentService>();
+            services.AddAutoMapper(typeof(AutoMappers).Assembly);
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
