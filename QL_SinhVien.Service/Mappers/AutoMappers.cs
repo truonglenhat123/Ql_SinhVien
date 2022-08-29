@@ -13,6 +13,8 @@ namespace QL_SinhVien.Service.Mappers
         {
             CreateMap<StudentDTO, SinhVienEntities>()
                 .ReverseMap();
+            CreateMap<RequestUpdate, SinhVienEntities>()
+                .ReverseMap();
         }
     }
 }

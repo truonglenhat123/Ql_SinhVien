@@ -47,10 +47,10 @@ namespace Ql_SinhVien.Controllers
             var result = _studentService.AddStudent(student);
             return Ok(result);
         }
-        [HttpPut]
-        public IActionResult Update([FromBody]  StudentDTO student)
+        [HttpPut("{id}")]
+        public IActionResult Update( int Id ,[FromBody] RequestUpdate student)
         {
-            var result = _studentService.UpdateStudent(student);
+            var result = _studentService.UpdateStudent(Id,student);
             return Ok(result);
         }
 

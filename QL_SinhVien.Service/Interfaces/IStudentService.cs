@@ -12,7 +12,7 @@ namespace QL_SinhVien.Service.Interfaces
 
         StudentDTO AddStudent(StudentDTO student);
 
-        StudentDTO UpdateStudent(StudentDTO student);
+        StudentDTO UpdateStudent(int Id, RequestUpdate student);
 
         bool DeleteStudent(int id);
 

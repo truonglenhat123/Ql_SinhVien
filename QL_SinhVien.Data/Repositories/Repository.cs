@@ -25,7 +25,7 @@ namespace QL_SinhVien.Data.Repositories
         
         public IEnumerable<T> Find(Expression<Func<T, bool>> expression)
         {
-            return _context.Set<T>().Where(expression);
+            return _context.Set<T>().AsNoTracking().Where(expression);
         }
 
         public IQueryable<T> GetAll()
