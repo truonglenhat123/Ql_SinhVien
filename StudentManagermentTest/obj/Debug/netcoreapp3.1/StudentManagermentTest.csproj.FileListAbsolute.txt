@@ -1,0 +1,6 @@
+D:\myapp\backend\Ql_SinhVien\StudentManagermentTest\bin\Debug\netcoreapp3.1\CoverletSourceRootsMapping
+D:\myapp\backend\Ql_SinhVien\StudentManagermentTest\obj\Debug\netcoreapp3.1\StudentManagermentTest.csproj.AssemblyReference.cache
+D:\myapp\backend\Ql_SinhVien\StudentManagermentTest\obj\Debug\netcoreapp3.1\StudentManagermentTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\myapp\backend\Ql_SinhVien\StudentManagermentTest\obj\Debug\netcoreapp3.1\StudentManagermentTest.AssemblyInfoInputs.cache
+D:\myapp\backend\Ql_SinhVien\StudentManagermentTest\obj\Debug\netcoreapp3.1\StudentManagermentTest.AssemblyInfo.cs
+D:\myapp\backend\Ql_SinhVien\StudentManagermentTest\obj\Debug\netcoreapp3.1\StudentManagermentTest.csproj.CoreCompileInputs.cache
